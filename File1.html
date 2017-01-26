@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link rel="stylesheet" href="style1.css">
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="script1.js"></script>
+<script src="convert2json.js"></script>
+<title>Resume</title>
+</head>
+<body>
+<nav class="navbar navbar-inverse">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<a class="navbar-brand" href="#"><strong>Resume</strong></a>
+			</div>
+			<ul class="nav navbar-nav navbar-right">
+				<li class="active"><a href="#">About</a></li>
+				<li class="dropdown"><a class="dropdown-toggle"
+					data-toggle="dropdown" href="#">Sections <span class="caret"></span></a>
+					<ul class="dropdown-menu" id="sec-menu">
+						<li id="exp"><a href="#frm2">Experience</a></li>
+						<li id="edu"><a href="#frm3">Education</a></li>
+						<li><a href="#">Awards</a></li>
+						<li><a href="#">Projects</a></li>
+						<li><a href="#">Skills</a></li>
+					</ul>
+					</li>
+				<li><a href="#">Contact</a></li>
+				<li id="tojson"><a href="#">JSON</a></li>
+				<li><Button class="btn btn-success">Login</Button></li>
+			</ul>
+         </div>
+</nav>
+<div class="row">
+			<div class="col-sm-4" id="frm1">
+			
+				<form>
+					<div class="form-group">
+						<input type="text" class="form-control" id="name" name="name"
+							placeholder="Your Name">
+					</div>
+					<div class="form-group">
+						<input type="text" class="form-control" id="position" name="position"
+							placeholder="Current Position">
+					</div>
+				    <div class="form-group">
+						<input type="text" class="form-control" id="location" name="location"
+							placeholder="Current Location">
+					</div>   
+					<div class="form-group">
+					<textarea class="form-control" rows="5" id="desc" placeholder="Tell us about yourself" name="desc"></textarea>
+					</div>
+				</form>
+				
+				<div id="dispjson"></div>
+			</div>	
+			<div class="col-sm-4" id="frm2">
+				<form>
+					<div id="experiencediv1" class="clonedExpDiv ">
+						<div class="form-group">
+							<input type="text" class="form-control exp-pos" id="position1"
+								placeholder="Position">
+						</div>
+						<div class="form-group">
+							<input type="text" class="form-control exp-comp" id="company1"
+								placeholder="Company">
+						</div>
+						<div class="form-group">
+							<div class="row">
+								<div class="col-sm-6">
+									<input type="month" class="form-control exp-month" id="month1"
+										placeholder="Month">
+								</div>
+								<div class="col-sm-6">
+									<input type="number" class="form-control exp-year" id="year1"
+										placeholder="Year">
+								</div>
+							</div>
+						</div>
+						<div class="form-group">
+							<input type="text" class="form-control exp-loc" id="location1"
+								placeholder="Location">
+						</div>
+						<div class="form-group">
+							<textarea class="form-control exp-desc" rows="5" id="desc1"
+								placeholder="Describe what to do"></textarea>
+						</div>
+					</div>	
+				<hr>
+				<button type="button" class="btn btn-info" data-toggle="collapse" data-target="#experiencediv2">Add experience</button>
+					<div id="experiencediv2" class="clonedExpDiv collapse">
+						<div class="form-group">
+							<input type="text" class="form-control exp-pos" id="position2" placeholder="Position"/>
+						</div>
+						<div class="form-group">
+							<input type="text" class="form-control exp-comp" id="company2" placeholder="Company"/>
+						</div>	
+						<div class="form-group">
+							<div class="row">	
+								<div class="col-sm-6">
+									<input type="month" class="form-control exp-month" id="month2"
+										placeholder="Month">
+								</div>
+								<div class="col-sm-6">
+									<input type="number" class="form-control exp-year" id="year2"
+										placeholder="Year">
+								</div>
+							</div>
+						</div>	
+						<div class="form-group">
+						<input type="text" class="form-control exp-loc" id="location2"
+								placeholder="Location">	
+						</div>
+						<div class="form-group">
+							<textarea class="form-control exp-desc" rows="5" id="desc2"
+								placeholder="Describe what to do"></textarea>
+						</div>
+					</div>	
+					<hr>
+					<button type="button" class="btn btn-info" data-toggle="collapse" data-target="#experiencediv3">Add Experience</button>
+					<div id="experiencediv3" class="clonedExpDiv collapse">
+						<div class="form-group">
+							<input type="text" class="form-control exp-pos" id="position3"
+								placeholder="Position">
+						</div>
+						<div class="form-group">
+							<input type="text" class="form-control exp-comp" id="company3"
+								placeholder="Company">
+						</div>
+						<div class="form-group">
+							<div class="row">
+								<div class="col-sm-6">
+									<input type="month" class="form-control exp-month" id="month3"
+										placeholder="Month">
+								</div>
+								<div class="col-sm-6">
+									<input type="number" class="form-control exp-year" id="year3"
+										placeholder="Year">
+								</div>
+							</div>
+						</div>
+						<div class="form-group">
+							<input type="text" class="form-control exp-loc" id="location3"
+								placeholder="Location">
+						</div>
+						<div class="form-group">
+							<textarea class="form-control exp-desc" rows="5" id="desc3"
+								placeholder="Describe what to do"></textarea>
+						</div>
+					</div>	
+				<hr>
+					
+					</form>
+               </div>
+           <div class="col-sm-4" id="frm3">
+			
+				<form>
+					<div id="educationdiv1" class="clonedEduDiv">
+						<div class="form-group">
+							<input type="text" class="form-control edu-school" id="school1" name="school1"
+								placeholder="School">
+						</div>
+						<div class="form-group">
+							<div class="row">
+								<div class="col-sm-6">
+									<input type="text" class="form-control edu-startyear" id="startyear1" name="startyear1"
+								placeholder="Start Year">
+								</div>
+								<div class="col-sm-6">
+									<input type="text" class="form-control edu-endyear" id="endyear1" name="endyear1"
+								placeholder="End Year">
+								</div>
+							</div>
+						</div>
+						<div class="form-group">
+							<input type="checkbox" class="form-control edu-currentattend" id="currentattend1" name="currentattend1"
+								value="I currently attend here">
+						</div>
+						<div class="form-group">
+							<textarea class="form-control edu-desc" rows="5" id="achievement1" name="achievement1"
+								placeholder="Achievements"></textarea>
+						</div>
+						
+					</div>
+					</form>
+					<div id="newEduButton">
+					<button id="newExp">
+						<span class="glyphicon glyphicon-plus"></span>Add Another Education
+					</button>
+				</div>
+				<div id="edudetailsDiv">
+					<div class="well well-lg clonedEduDetailsDiv" id="eduworkdetails1">
+						<span id="eduinfo"></span> <span id="eduinfoedit"
+							class="glyphicon glyphicon-pencil"></span> <span id="eduinfodel"
+							class="glyphicon glyphicon-trash"></span>
+					</div>
+				</div>
+			</div>
+            <div class="col-sm-8" id="side">
+               <textarea rows="15" cols="80" id="resume" readonly></textarea>
+            </div>
+            <div class=row>
+            <div class="col-md-4">
+             <button id="update" class="btn btn-primary">UPDATE</button>   
+            </div>
+            </div>
+            
+ </div>	
+      
+</body>
+</html>

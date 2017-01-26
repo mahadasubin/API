@@ -1,0 +1,26 @@
+@CHARSET "UTF-8";
+
+#frm2{
+  display:none;
+}
+
+#frm3{
+  display:none;
+}
+
+//#workdetailsDiv{
+  display:none;
+}
+//#newExpButton{
+  display:none;
+}
+input[type="month"]::before { 
+	content: attr(data-placeholder);
+}
+input[type="month"]:focus::before,
+input[type="month"]:valid::before { 
+  content:"" ;
+}
+.glyphicon{
+  float:right;
+}
